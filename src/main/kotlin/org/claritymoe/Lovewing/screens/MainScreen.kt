@@ -14,18 +14,12 @@
  *    limitations under the License.
  */
 
-package org.claritymoe.Lovewing
+package org.claritymoe.Lovewing.screens
 
-import com.badlogic.gdx.backends.lwjgl.LwjglApplication
-import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration
+import ktx.app.KtxScreen
 
-fun main(args: Array<String>) {
-    val config = LwjglApplicationConfiguration().apply {
-        title = "Lovewing"
-        // These will be set using a config file later
-        width = 1280
-        height = 720
+class MainScreen : KtxScreen {
+    override fun render(delta: Float) {
+
     }
-
-    LwjglApplication(LovewingGame(), config)
 }

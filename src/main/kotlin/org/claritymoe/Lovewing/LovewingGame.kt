@@ -16,16 +16,14 @@
 
 package org.claritymoe.Lovewing
 
-import com.badlogic.gdx.backends.lwjgl.LwjglApplication
-import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration
+import com.badlogic.gdx.Screen
+import ktx.app.KtxGame
+import org.claritymoe.Lovewing.screens.MainScreen
 
-fun main(args: Array<String>) {
-    val config = LwjglApplicationConfiguration().apply {
-        title = "Lovewing"
-        // These will be set using a config file later
-        width = 1280
-        height = 720
+class LovewingGame : KtxGame<Screen>() {
+    override fun create() {
+        addScreen(MainScreen())
+
+        setScreen<MainScreen>()
     }
-
-    LwjglApplication(LovewingGame(), config)
 }
