@@ -1,5 +1,9 @@
 buildscript {
-    ext.kotlin_version = '1.2.10'
+    ext {
+        kotlin_version = '1.2.10'
+        ktx_version = '1.9.7-b1'
+        gdx_version = '1.9.7'
+    }
 
     repositories {
         mavenCentral()
@@ -27,6 +31,10 @@ repositories {
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+    compile "com.badlogicgames.gdx:gdx-platform:$gdx_version:natives-desktop"
+    compile "com.badlogicgames.gdx:gdx:$gdx_version"
+    compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdx_version"
+    compile "io.github.libktx:ktx-app:$ktx_version"
 }
 
 compileKotlin {
@@ -40,8 +48,22 @@ shadowJar {
     archiveName = 'Lovewing.jar'
 }
 
-jar.enabled = false
-shadowDistTar.enabled = false
-shadowDistZip.enabled = false
-distTar.enabled = false
-distZip.enabled = false
+jar {
+    enabled = false
+}
+
+shadowDistTar {
+    enabled = false
+}
+
+shadowDistZip {
+    enabled = false
+}
+
+distTar {
+    enabled = false
+}
+
+distZip {
+    enabled = false
+}
