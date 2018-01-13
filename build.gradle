@@ -26,6 +26,7 @@ mainClassName = 'org.claritymoe.Lovewing.MainKt'
 
 repositories {
     mavenCentral()
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
@@ -35,6 +36,10 @@ dependencies {
     compile "com.badlogicgames.gdx:gdx:$gdx_version"
     compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdx_version"
     compile "io.github.libktx:ktx-app:$ktx_version"
+    compile "io.github.libktx:ktx-scene2d:$ktx_version"
+    compile "io.github.libktx:ktx-style:$ktx_version"
+    compile "io.github.libktx:ktx-actors:$ktx_version"
+    compile "com.github.MinnDevelopment:Java-DiscordRPC:v1.3.2"
 }
 
 compileKotlin {
