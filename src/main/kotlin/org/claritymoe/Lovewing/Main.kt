@@ -18,6 +18,7 @@ package org.claritymoe.Lovewing
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration
+import org.claritymoe.Lovewing.utils.DiscordUtils
 
 fun main(args: Array<String>) {
     val config = LwjglApplicationConfiguration().apply {
@@ -26,6 +27,8 @@ fun main(args: Array<String>) {
         width = 1280
         height = 720
     }
+
+    DiscordUtils.init("384734966690611202")
 
     LwjglApplication(LovewingGame(), config)
 }

@@ -16,10 +16,37 @@
 
 package org.claritymoe.Lovewing.screens
 
+import com.badlogic.gdx.Gdx
+import com.badlogic.gdx.graphics.Texture
+import com.badlogic.gdx.scenes.scene2d.Stage
+import com.badlogic.gdx.scenes.scene2d.ui.Image
+import com.badlogic.gdx.utils.viewport.ScreenViewport
+import ktx.actors.centerPosition
 import ktx.app.KtxScreen
+import org.claritymoe.Lovewing.utils.DiscordUtils
 
 class MainScreen : KtxScreen {
-    override fun render(delta: Float) {
+    private val stage = Stage(ScreenViewport())
 
+    init {
+        val img = Image(Texture(Gdx.files.absolute("./src/main/resources/img/backgrounds/mainmenu.png")))
+
+        img.width = 1280F
+        img.centerPosition(1280F, 720F)
+
+        stage.addActor(img)
+    }
+
+    override fun render(delta: Float) {
+        DiscordUtils.updatePresence(
+                DiscordUtils.presence {
+                    details = "Main Menu"
+                    state = "Idle"
+                    largeImageKey = "logo"
+                }
+        )
+
+        stage.act()
+        stage.draw()
     }
 }
